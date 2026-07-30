@@ -71,8 +71,3 @@ terminalForm.addEventListener("submit", (event) => {
     terminalInput.value = "";
 
 });
-    #terminalInput {
-        width: 100%;
-    }
-
-}
