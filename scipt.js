@@ -1,73 +1,42 @@
-/* =========================================================
-   INTERACTIVE TERMINAL
-   ========================================================= */
+const terminalCommands = {
+    whoami: "Pete Junior — Tech enthusiast, creator, future engineer.",
+    mission: "Build technology that solves real problems.",
+    motto: "Explore. Dream. Discover.",
+    interests: "Tech · Coding · Gaming · Music · Gadgets · Poetry",
+    status: "Curious. Learning. Building.",
+    help: "Commands: whoami, mission, motto, interests, status, clear"
+};
 
 const terminalForm = document.getElementById("terminalForm");
 const terminalInput = document.getElementById("terminalInput");
 const terminalOutput = document.getElementById("terminalOutput");
 
-
-function printTerminal(text, className = "") {
-
+function printTerminal(text) {
     const line = document.createElement("p");
-
-    if (className) {
-        line.classList.add(className);
-    }
-
     line.textContent = text;
-
     terminalOutput.appendChild(line);
-
-    terminalOutput.scrollTop =
-        terminalOutput.scrollHeight;
+    terminalOutput.scrollTop = terminalOutput.scrollHeight;
 }
 
-
-terminalForm.addEventListener("submit", (event) => {
-
+terminalForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const command =
-        terminalInput.value
-            .trim()
-            .toLowerCase();
+    const command = terminalInput.value.trim().toLowerCase();
 
-    if (!command) return;
+    if (command === "") return;
 
+    printTerminal("pete@portfolio:~$ " + command);
 
-    printTerminal(
-        `pete@portfolio:~$ ${command}`
-    );
-
-
-    if (terminalCommands[command]) {
-
-        printTerminal(
-            terminalCommands[command]
-        );
-
-    }
-
-    else if (command === "clear") {
-
+    if (command === "clear") {
         terminalOutput.innerHTML = "";
-
-    }
-
+    } 
+    else if (terminalCommands[command]) {
+        printTerminal(terminalCommands[command]);
+    } 
     else {
-
-        printTerminal(
-            `Command not found: ${command}`
-        );
-
-        printTerminal(
-            "Type 'help' to see available commands."
-        );
-
+        printTerminal("Command not found: " + command);
+        printTerminal("Type 'help' to see available commands.");
     }
-
 
     terminalInput.value = "";
-
 });
