@@ -78,4 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  console.log("Pete Junior Portfolio
+  console.log("Pete Junior Portfolio Loaded Successfully.");
+
+});
