@@ -1219,3 +1219,48 @@ footer .copyright {
     }
 
 }
+/* =========================
+   TYPEWRITER EFFECT
+========================= */
+
+.typing-container {
+    margin-top: 25px;
+
+    font-family: 'Space Mono', monospace;
+
+    font-size: 1rem;
+
+    color: #888;
+
+    letter-spacing: 1px;
+}
+
+.typing-prefix {
+    color: #ff1e1e;
+
+    margin-right: 8px;
+}
+
+#typing-text {
+    color: #eee;
+}
+
+
+.cursor {
+    color: #ff1e1e;
+
+    animation: blink 0.8s infinite;
+}
+
+
+@keyframes blink {
+
+    0%, 50% {
+        opacity: 1;
+    }
+
+    51%, 100% {
+        opacity: 0;
+    }
+
+}
