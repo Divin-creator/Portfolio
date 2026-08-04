@@ -143,4 +143,24 @@ function typeEffect() {
 
 
 typeEffect();
+   /* ==========================
+   SCROLL PROGRESS BAR
+========================== */
+
+const progressBar = document.getElementById("scroll-progress");
+
+window.addEventListener("scroll", () => {
+
+    const scrollTop = window.scrollY;
+
+    const pageHeight =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+    const progress =
+        (scrollTop / pageHeight) * 100;
+
+    progressBar.style.width = progress + "%";
+
+});
 });
